@@ -1,6 +1,3 @@
-"use client";
-
-import { Spacer, colors } from "@nextui-org/react";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -15,7 +12,7 @@ const Navbar = () => {
       <p className="text-xl">
         <span className="text-2xl font-bold">P</span>okemon
       </p>
-      <Spacer className="flex-1" />
+      {/* <Spacer className="flex-1" /> */}
       <p>Favoritos</p>
     </div>
   );

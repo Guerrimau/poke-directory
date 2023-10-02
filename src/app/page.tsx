@@ -1,12 +1,20 @@
-"use client";
+export async function generateStaticParams() {
+  console.log("Executing...")
+  return [{ id: '1' }, { id: '2' }, { id: '3' }]
+}
 
-import { Button } from '@nextui-org/button';
-
-export default function Home() {
+function Home(props: any) {
+  console.log(props)
   return (
     <main className="px-5">
-      <h1>Hello World</h1>
-      <Button>Click Me</Button>
+      <ul>
+        <li>Helo</li>
+        <li>Helo</li>
+        <li>Helo</li>
+        <li>Helo</li>
+      </ul>
     </main>
   )
 }
+
+export default Home;
