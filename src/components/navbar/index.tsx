@@ -1,18 +1,9 @@
-import Image from "next/image";
-
 const Navbar = () => {
   return (
-    <div className="flex w-full flex-row items-center justify-start bg-zinc-900  px-4 py-1 ">
-      <Image
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
-        alt="ditto"
-        width={70}
-        height={70}
-      />
-      <p className="text-xl">
+    <div className="flex w-full flex-row items-center justify-start bg-zinc-900 px-6 py-4 ">
+      <p className="text-xl mr-auto">
         <span className="text-2xl font-bold">P</span>okemon
       </p>
-      {/* <Spacer className="flex-1" /> */}
       <p>Favoritos</p>
     </div>
   );
