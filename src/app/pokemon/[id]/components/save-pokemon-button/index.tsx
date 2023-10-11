@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { Button } from "@nextui-org/button";
-import toggleFavorite from "@/utils/toggle-favorite-from-storage";
+import { toggleFavorite } from "@/utils";
 
 interface Props {
   pokemonId: string;
