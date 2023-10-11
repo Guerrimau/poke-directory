@@ -1,22 +1,24 @@
-"use client"
+"use client";
 
-import { ReactNode } from "react";
+import { useState } from "react";
 import { Button } from "@nextui-org/button";
-import { toggleFavorite } from "@/utils";
+import { isInFavorites, toggleFavorite } from "@/utils";
 
 interface Props {
   pokemonId: string;
-  children: ReactNode;
 }
 
-const SavePokemonButton = ({ pokemonId, children }: Props) => {
+const SavePokemonButton = ({ pokemonId }: Props) => {
+  const [saved, setSaved] = useState(isInFavorites(pokemonId));
+
   const onClick = () => {
+    setSaved((pre) => !pre);
     toggleFavorite(pokemonId);
-  }
+  };
 
   return (
     <Button color="primary" variant="ghost" onClick={onClick}>
-      {children}
+      {saved ? "Remove from Favorites" : "Save to Favorites"}
     </Button>
   );
 };

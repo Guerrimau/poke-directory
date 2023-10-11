@@ -30,9 +30,7 @@ const PokemonPage: NextPage<Props> = async ({ params }) => {
       <Card className="col-span-2 p-3">
         <CardHeader className="justify-between">
           <h1 className="text-4xl font-bold capitalize">{pokemon.name}</h1>
-          <SavePokemonButton pokemonId={pokemonId}>
-            Save to favorites
-          </SavePokemonButton>
+          <SavePokemonButton pokemonId={pokemonId} />
         </CardHeader>
         <CardBody>
           <p className="text-lg">Sprites:</p>
