@@ -5,7 +5,7 @@ export default async function Home() {
   const pokemons = await pokeApi.getPokemonsMany();
   return (
     <main className="p-4">
-      <div className="xs:grid-cols-1 grid grid-flow-row gap-4 sm:grid-cols-2 md:grid-cols-4">
+      <div className="xs:grid-cols-1 grid grid-flow-row gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
         {pokemons.map((pokemon) => {
           return <PokemonCard key={pokemon.id} pokemon={pokemon} />;
         })}

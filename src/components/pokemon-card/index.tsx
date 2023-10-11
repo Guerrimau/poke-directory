@@ -11,23 +11,23 @@ interface Props {
 
 const PokemonCard = ({ pokemon }: Props) => {
   return (
-    <Card isPressable key={pokemon.id}>
-      <Link href={"/pokemon/" + pokemon.id} className="h-full w-full flex flex-col">
-        <CardBody>
+    <Link href={"/pokemon/" + pokemon.id} className="h-[250px]">
+      <Card isPressable key={pokemon.id} className="w-full h-full">
+        <CardBody className="overflow-hidden justify-center items-center">
           <Image
-            className="rounded-xl object-cover"
+            className="rounded-xl"
             src={pokemon.img}
             alt={pokemon.name + "_image"}
-            height="80px"
-            width="100%"
+            height={150}
+            width={150}
           />
         </CardBody>
-        <CardFooter className="flex justify-between">
+        <CardFooter className="justify-between">
           <p className="capitalize">{pokemon.name}</p>
           <p># {pokemon.id}</p>
         </CardFooter>
-      </Link>
-    </Card>
+      </Card>
+    </Link>
   );
 };
 

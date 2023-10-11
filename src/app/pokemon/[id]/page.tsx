@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 import NextImage from "next/image";
 import { Image } from "@nextui-org/image";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
@@ -47,6 +47,13 @@ const PokemonPage: NextPage<Props> = async ({ params }) => {
     </main>
   );
 };
+
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  const pokemon = await pokeApi.getPokemonById(params.id);
+  return {
+    title: pokemon.name
+  };
+}
 
 export const dynamicParams = false;
 
