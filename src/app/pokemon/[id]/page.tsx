@@ -2,8 +2,8 @@ import { Metadata, NextPage } from "next";
 import NextImage from "next/image";
 import { Image } from "@nextui-org/image";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { Button } from "@nextui-org/button";
 import { pokeApi } from "@/services";
+import SavePokemonButton from "./components/save-pokemon-button";
 
 interface Props {
   params: { id: string };
@@ -30,9 +30,9 @@ const PokemonPage: NextPage<Props> = async ({ params }) => {
       <Card className="col-span-2 p-3">
         <CardHeader className="justify-between">
           <h1 className="text-4xl font-bold capitalize">{pokemon.name}</h1>
-          <Button color="primary" variant="ghost">
-            Guardar en favoritos
-          </Button>
+          <SavePokemonButton pokemonId={pokemonId}>
+            Save to favorites
+          </SavePokemonButton>
         </CardHeader>
         <CardBody>
           <p className="text-lg">Sprites:</p>
@@ -48,12 +48,14 @@ const PokemonPage: NextPage<Props> = async ({ params }) => {
   );
 };
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
   const pokemon = await pokeApi.getPokemonById(params.id);
   return {
-    title: pokemon.name
+    title: pokemon.name,
   };
-}
+};
 
 export const dynamicParams = false;
 
