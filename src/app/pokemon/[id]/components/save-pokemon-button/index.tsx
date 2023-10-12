@@ -9,16 +9,16 @@ interface Props {
 }
 
 const SavePokemonButton = ({ pokemonId }: Props) => {
-  const [saved, setSaved] = useState(isInFavorites(pokemonId));
+  const [isFavorited, setIsFavorites] = useState(isInFavorites(pokemonId));
 
   const onClick = () => {
-    setSaved((pre) => !pre);
+    setIsFavorites((pre) => !pre);
     toggleFavorite(pokemonId);
   };
 
   return (
     <Button color="primary" variant="ghost" onClick={onClick}>
-      {saved ? "Remove from Favorites" : "Save to Favorites"}
+      {isFavorited ? "Remove from Favorites" : "Save to Favorites"}
     </Button>
   );
 };
