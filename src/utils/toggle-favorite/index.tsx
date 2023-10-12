@@ -1,5 +1,5 @@
 const toggleFavorite = (id: string) => {
-  let favoritesString = localStorage.getItem("favorites");
+  let favoritesString = localStorage?.getItem("favorites");
   let favoritesArray = favoritesString?.split(",") || [];
 
   if (favoritesArray?.includes(id)) {

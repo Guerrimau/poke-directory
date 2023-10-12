@@ -7,7 +7,12 @@ const pokeApi = axios.create({
 
 const getPokemonById = async (pokemonId: string) => {
   const { data } = await pokeApi.get<Pokemon>("/pokemon/" + pokemonId);
-  return data;
+  const pokemon: Pokemon = {
+    id: data.id,
+    sprites: data.sprites,
+    name: data.name,
+  }
+  return pokemon;
 };
 
 const getPokemonsMany = async () => {
