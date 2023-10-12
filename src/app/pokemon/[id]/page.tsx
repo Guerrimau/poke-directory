@@ -52,6 +52,12 @@ export const generateMetadata = async ({
   const pokemon = await pokeApi.getPokemonById(params.id);
   return {
     title: pokemon.name,
+    openGraph: {
+      title: pokemon.name + " | Pokemon Information",
+      description:
+        "Explore detailed Pokémon profiles on our website, featuring captivating images and four dynamic sprites showcasing each Pokémon from various angles, allowing you to appreciate their unique characteristics and forms.",
+      images: "/opengraph-image.png",
+    },
   };
 };
 
