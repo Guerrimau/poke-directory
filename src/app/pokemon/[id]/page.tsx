@@ -61,8 +61,6 @@ export const generateMetadata = async ({
   };
 };
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   const pokemon151 = [...Array(151)].map((_, index) => ({
     id: String(index + 1),
